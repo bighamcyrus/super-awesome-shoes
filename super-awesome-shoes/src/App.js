@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Nav from './Components/navBar/navBar'
+// import Product from './Components/ProductItem/product'
 
 // const httpLink = createHttpLink({
 //   uri: '/graphql',
@@ -25,6 +26,7 @@ function App() {
   return (
     
      <Nav />
+    // <Product />
     
   );
 }
