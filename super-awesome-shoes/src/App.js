@@ -1,7 +1,12 @@
 import React from 'react';
 
+
 import Nav from './Components/navBar/navBar'
-// import Product from './Components/ProductItem/product'
+import Product from './Components/ProductItem/product'
+// import Nav from './Components/navBar/navBar';
+
+// import ShoppingCart from './Components/Cart';
+
 
 // const httpLink = createHttpLink({
 //   uri: '/graphql',
@@ -24,10 +29,16 @@ import Nav from './Components/navBar/navBar'
 
 function App() {
   return (
+
+<>
+    <Nav />
+    <Product image={""} seller={""} name={"Jordans"} description={""} _id={""} price={4} quantity={4} />
+    {/* // <ShoppingCart /> */}
+</>
     
-     <Nav />
-    // <Product />
-    
+
+
+
   );
 }
 

@@ -21,10 +21,10 @@ function ProductItem(item) {
     quantity
   } = item;
 
-  const { cart } = state
+  // const { cart } = state
 
   const addToCart = () => {
-    const itemInCart = cart.find((cartItem) => cartItem._id === _id)
+    const itemInCart = state.cart.find((cartItem) => cartItem._id === _id)
     if (itemInCart) {
       dispatch({
         type: UPDATE_CART_QUANTITY,
