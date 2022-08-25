@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import Nav from './Components/navBar/navBar'
 import ProductList from './Components/ProductList/ProductList'
 
@@ -22,6 +23,11 @@ const theme = createTheme({
   },
 });
 
+// import Nav from './Components/navBar/navBar';
+
+import ShoppingCart from './Components/Cart';
+
+
 // const httpLink = createHttpLink({
 //   uri: '/graphql',
 // });
@@ -43,6 +49,7 @@ const theme = createTheme({
 
 function App() {
   return (
+
     <ThemeProvider theme={theme}>
   
 
@@ -53,6 +60,10 @@ function App() {
 
      </ThemeProvider>
      
+
+    <ShoppingCart />
+
+
      
     
   );
