@@ -1,7 +1,6 @@
 import React from 'react';
-
 import Nav from './Components/navBar/navBar'
-
+import Product from './Components/Product/product'
 // const httpLink = createHttpLink({
 //   uri: '/graphql',
 // });
@@ -23,9 +22,10 @@ import Nav from './Components/navBar/navBar'
 
 function App() {
   return (
-    
-     <Nav />
-    
+    <div>
+      <Nav />
+      <Product />
+    </div>
   );
 }
 
