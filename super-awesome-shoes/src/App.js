@@ -1,6 +1,26 @@
 import React from 'react';
 
 import Nav from './Components/navBar/navBar'
+import ProductList from './Components/ProductList/ProductList'
+
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: '#5b5b5b',
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#ffea00',
+      dark: '#ba000d',
+      contrastText: '#000',
+    },
+  },
+});
 
 // const httpLink = createHttpLink({
 //   uri: '/graphql',
@@ -23,8 +43,17 @@ import Nav from './Components/navBar/navBar'
 
 function App() {
   return (
-    
+    <ThemeProvider theme={theme}>
+  
+
      <Nav />
+     <ProductList />
+     
+
+
+     </ThemeProvider>
+     
+     
     
   );
 }
