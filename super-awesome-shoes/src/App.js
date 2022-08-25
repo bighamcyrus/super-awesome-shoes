@@ -1,6 +1,8 @@
 import React from 'react';
 
-import Nav from './Components/navBar/navBar'
+// import Nav from './Components/navBar/navBar';
+
+import ShoppingCart from './Components/Cart';
 
 // const httpLink = createHttpLink({
 //   uri: '/graphql',
@@ -23,8 +25,9 @@ import Nav from './Components/navBar/navBar'
 
 function App() {
   return (
-    
-     <Nav />
+    <ShoppingCart />
+
+     
     
   );
 }
