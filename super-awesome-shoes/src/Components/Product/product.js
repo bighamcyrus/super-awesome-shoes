@@ -30,7 +30,7 @@ export default function TitlebarBelowImageList() {
 const itemData = [
   {
     img: '/images/YeezyBlack.png',
-    title: 'Adidas Yeezy Boost 350 V2',
+    title: 'Adidas Yeezy Boost 350 V2 Black',
     price: '$330.00',
   },
   {
