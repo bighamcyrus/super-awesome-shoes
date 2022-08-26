@@ -66,7 +66,7 @@ function App() {
             <Product
               image={""}
               seller={""}
-              name={"Jordans"}
+              name={""}
               description={""}
               _id={""}
               price={4}
