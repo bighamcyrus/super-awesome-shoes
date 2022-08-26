@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -12,10 +11,6 @@ import shoppingLogo from './shoppingLogoResize.png'
 
 
 
-const bgColor = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.primary.main,
-
-}));
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
     ...theme.typography.body2,
