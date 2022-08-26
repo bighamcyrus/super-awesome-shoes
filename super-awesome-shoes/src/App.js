@@ -4,6 +4,7 @@ import Nav from './Components/navBar/navBar'
 import ProductList from './Components/ProductList/ProductList'
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Product from './Components/Product/product'
 
 const theme = createTheme({
   palette: {
@@ -48,10 +49,14 @@ function App() {
 
      <Nav />
      <ProductList />
+     <Product image={""} seller={""} name={"Jordans"} description={""} _id={""} price={4} quantity={4} />
      
 
 
      </ThemeProvider>
+
+
+    
      
      
     
