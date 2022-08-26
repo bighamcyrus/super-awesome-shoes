@@ -31,7 +31,7 @@ const itemData = [
     price: '$330.00',
   },
   {
-    img: '/images/YeezySlide.png',
+    img: '/images/YeezySlides.png',
     title: 'Adidas Yeezy Slides',
     price: '$124.00',
   },
