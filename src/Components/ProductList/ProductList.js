@@ -55,4 +55,9 @@ const itemData = [
     title: 'Nike Air Yeezy 2 SP Red October',
     price: '$23,250.00',
   },
+  {
+    img: '/images/JordanRetro.png',
+    title: 'Jordan 1 Retro High OG',
+    price: '$186.00',
+  },
 ];

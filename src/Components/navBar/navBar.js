@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -60,16 +59,6 @@ function FormRow() {
         </React.Fragment>
 
     );
-=======
-import React from 'react'
-
-function navBar() {
-  return (
-    <div>
-      
-    </div>
-  )
->>>>>>> main
 }
 
 export default function NestedGrid() {
