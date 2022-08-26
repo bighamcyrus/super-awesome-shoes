@@ -1,63 +1,65 @@
-import * as React from 'react';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
-import '../../styles/productlist.css'
+import React from "react";
+import { Link } from "react-router-dom";
+import { pluralize } from "../../utils/helpers"
+import { useStoreContext } from "../../utils/GlobalState";
+import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
+import { idbPromise } from "../../utils/helpers";
+import './style.css';
 
 
-export default function TitlebarBelowImageList() {
+
+function ProductItem(item) {
+  const [state, dispatch] = useStoreContext();
+
+  const {
+    image,
+    seller,
+    name,
+    description,
+    _id,
+    price,
+    quantity
+  } = item;
+
+  // const { cart } = state
+
+  const addToCart = () => {
+    const itemInCart = state.cart.find((cartItem) => cartItem._id === _id)
+    if (itemInCart) {
+      dispatch({
+        type: UPDATE_CART_QUANTITY,
+        _id: _id,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+      });
+      idbPromise('cart', 'put', {
+        ...itemInCart,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+      });
+    } else {
+      dispatch({
+        type: ADD_TO_CART,
+        product: { ...item, purchaseQuantity: 1 }
+      });
+      idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
+    }
+  }
+
   return (
-    <ImageList sx={{ width: 630, height: 500, border: '3px solid black', margin:'100px', padding:'150px' }} cols={3} gap={50} rowHeight={164}>
-      {itemData.map((item, index) => (
-        <ImageListItem key={index}>
-          <img
-            src={`${item.img}?w=248&fit=crop&auto=format`}
-            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-            alt={item.title}
-            loading="lazy"
-          />
-          <ImageListItemBar
-            title={item.title}
-            subtitle={<span>Price: {item.price}</span>}
-            position="below"
-          />
-        </ImageListItem>
-      ))}
-    </ImageList>
+    <div className="card px-1 py-1">
+      <Link to={`/products/${_id}`}>
+        <img
+          alt={name}
+          src={`/images/${image}`}
+        />
+        <p>{name}</p>
+      </Link>
+      <div>
+        <div> {seller}{description}{quantity}{pluralize("item", quantity)} in stock</div>
+        <span>${price}</span>
+      </div>
+      <button onClick={addToCart}>Add to cart</button>
+    </div>
   );
 }
 
-const itemData = [
-  {
-    img: '/images/YeezyBlack.png',
-    title: 'Adidas Yeezy Boost 350 V2 Black',
-    price: '$330.00',
-  },
-  {
-    img: '/images/YeezySlides.png',
-    title: 'Adidas Yeezy Slides',
-    price: '$124.00',
-  },
-  {
-    img: '/images/YeezyFoam.png',
-    title: 'Adidas Yeezy Foam Runner',
-    price: '$227.00',
-  },
-  {
-    img: '/images/YeezyWave.png',
-    title: 'Adidas Yezzy Boost 700 Wave',
-    price: '$410.00',
-  },
-  {
-    img: '/images/YeezyZebra.png',
-    title: 'Adidas Yeezy Boost 350 V2 Zebra',
-    price: '$348.00',
-  },
-  {
-    img: '/images/RedOctober.png',
-    title: 'Nike Air Yeezy 2 SP Red October',
-    price: '$23,250.00',
-  },
-];
-
-
+export default ProductItem;

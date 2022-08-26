@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -7,7 +7,6 @@ import Grid from '@mui/material/Grid';
 
 
 
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import shoppingLogo from './shoppingLogoResize.png'
 
@@ -60,31 +59,21 @@ function FormRow() {
         </React.Fragment>
 
     );
-=======
-import React from 'react'
+    }
 
-function navBar() {
-  return (
-    <div>
-      
-    </div>
-  )
->>>>>>> main
-}
 
 export default function NestedGrid() {
     return (
         <Box backgroundColor="#333333" sx={{ flexGrow: 4 }}>
             <Grid container rowSpacing={5} spacing={4}>
-                <Grid item justifyContent='flex-end' spacing={4}>
+                <Grid item justifyContent='flex-end'>
 
                     <img src={shoppingLogo} />
                 </Grid>
                 
                     <FormRow justifyContent="flex-end" />
-                
-
-            </Grid>
+                    </Grid>
+                        
         </Box>
     );
-}
+};

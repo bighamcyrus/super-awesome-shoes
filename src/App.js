@@ -1,11 +1,18 @@
 import React from 'react';
-<<<<<<< HEAD
+import {BrowserRouter as Router} from "react-router-dom"
+import { StoreProvider } from './utils/GlobalState'
+
+import ProductList from './Components/ProductList/ProductList'
+import ShoppingCart from './Components/Cart';
+
 
 
 import Nav from './Components/navBar/navBar'
-import ProductList from './Components/ProductList/ProductList'
+import Product from './Components/Product/product'
+
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 
 const theme = createTheme({
   palette: {
@@ -24,15 +31,41 @@ const theme = createTheme({
   },
 });
 
+
+function App() {
+  return (
+    <Router>
+<StoreProvider>
+<ThemeProvider theme={theme}>
+    <Nav />
+    <Product image={""} seller={""} name={"Jordans"} description={""} _id={""} price={4} quantity={4} />
+    {/* <ShoppingCart /> */}
+
+    
+   
+     <ProductList />
+     
+
+   
+     
+
+    {/* <ShoppingCart /> */}
+
+    </ThemeProvider>
+
+    </StoreProvider>
+     
+    </Router>
+
+  );
+}
+
+export default App;
+
 // import Nav from './Components/navBar/navBar';
 
-import ShoppingCart from './Components/Cart';
 
 
-=======
-import Nav from './Components/navBar/navBar'
-import Product from './Components/Product/product'
->>>>>>> main
 // const httpLink = createHttpLink({
 //   uri: '/graphql',
 // });
@@ -52,33 +85,3 @@ import Product from './Components/Product/product'
 //   cache: new InMemoryCache(),
 // });
 
-function App() {
-  return (
-<<<<<<< HEAD
-
-    <ThemeProvider theme={theme}>
-  
-
-     <Nav />
-     <ProductList />
-     
-
-
-     </ThemeProvider>
-     
-
-    <ShoppingCart />
-
-
-     
-    
-=======
-    <div>
-      <Nav />
-      <Product />
-    </div>
->>>>>>> main
-  );
-}
-
-export default App;
