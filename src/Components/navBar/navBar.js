@@ -60,29 +60,20 @@ function FormRow() {
 
     );
     }
-import React from 'react'
 
-function navBar() {
-  return (
-    <div>
-      
-    </div>
-  )
-}
 
 export default function NestedGrid() {
     return (
         <Box backgroundColor="#333333" sx={{ flexGrow: 4 }}>
             <Grid container rowSpacing={5} spacing={4}>
-                <Grid item justifyContent='flex-end' spacing={4}>
+                <Grid item justifyContent='flex-end'>
 
                     <img src={shoppingLogo} />
                 </Grid>
                 
                     <FormRow justifyContent="flex-end" />
-                
-
-            </Grid>
+                    </Grid>
+                        
         </Box>
     );
-}
+};

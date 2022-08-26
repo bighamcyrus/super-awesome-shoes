@@ -1,7 +1,6 @@
 import React from 'react';
+import {BrowserRouter as Router} from "react-router-dom"
 import { StoreProvider } from './utils/GlobalState'
-
-
 
 import ProductList from './Components/ProductList/ProductList'
 import ShoppingCart from './Components/Cart';
@@ -11,7 +10,9 @@ import ShoppingCart from './Components/Cart';
 import Nav from './Components/navBar/navBar'
 import Product from './Components/Product/product'
 
+
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 
 const theme = createTheme({
   palette: {
@@ -33,29 +34,28 @@ const theme = createTheme({
 
 function App() {
   return (
+    <Router>
 <StoreProvider>
 <ThemeProvider theme={theme}>
     <Nav />
     <Product image={""} seller={""} name={"Jordans"} description={""} _id={""} price={4} quantity={4} />
     {/* <ShoppingCart /> */}
 
-
     
-
-    
+   
      <ProductList />
      
 
    
      
 
-    <ShoppingCart />
+    {/* <ShoppingCart /> */}
 
     </ThemeProvider>
 
     </StoreProvider>
      
-    
+    </Router>
 
   );
 }
@@ -84,3 +84,4 @@ export default App;
 //   link: authLink.concat(httpLink),
 //   cache: new InMemoryCache(),
 // });
+
