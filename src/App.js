@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { StoreProvider } from "./utils/GlobalState";
 
 import ProductList from "./Components/ProductList/ProductList";
@@ -55,34 +55,91 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+// function App() {
+//   return (
+//     <Router>
+//       <ApolloProvider client={client}>
+//         <Login />
+//         <StoreProvider>
+//           <ThemeProvider theme={theme}>
+//             <Nav />
+//             <Product
+//               image={""}
+//               seller={""}
+//               name={"Jordans"}
+//               description={""}
+//               _id={""}
+//               price={4}
+//               quantity={4}
+//             />
+//             <ShoppingCart />
+
+//             <ProductList />
+
+//             {/* <ShoppingCart /> */}
+//           </ThemeProvider>
+//         </StoreProvider>
+//       </ApolloProvider>
+//     </Router>
+//   );
+// }
+
 function App() {
   return (
     <Router>
-      <ApolloProvider client={client}>
-        <Login />
-        <StoreProvider>
+      <StoreProvider>
+        <ApolloProvider client={client}>
           <ThemeProvider theme={theme}>
             <Nav />
-            <Product
-              image={""}
-              seller={""}
-              name={"Jordans"}
-              description={""}
-              _id={""}
-              price={4}
-              quantity={4}
-            />
-            <ShoppingCart />
+            <Routes>
+              <Route exact path="/login" element={<Login />} />
 
-            <ProductList />
-
-            {/* <ShoppingCart /> */}
+              <Route
+                path="/"
+                exact
+                element={
+                  <Product
+                    image={""}
+                    seller={""}
+                    name={"Jordans"}
+                    description={""}
+                    _id={""}
+                    price={4}
+                    quantity={4}
+                  />
+                }
+              />
+            </Routes>
           </ThemeProvider>
-        </StoreProvider>
-      </ApolloProvider>
+        </ApolloProvider>
+      </StoreProvider>
     </Router>
   );
 }
+
+//       <ApolloProvider client={client}>
+//         <Login />
+//         <StoreProvider>
+//           <ThemeProvider theme={theme}>
+//             <Nav />
+//             <Product
+//               image={""}
+//               seller={""}
+//               name={"Jordans"}
+//               description={""}
+//               _id={""}
+//               price={4}
+//               quantity={4}
+//             />
+//             <ShoppingCart />
+
+//             <ProductList />
+
+//             {/* <ShoppingCart /> */}
+//           </ThemeProvider>
+//         </StoreProvider>
+//       </ApolloProvider>
+//     </Router>
 
 export default App;
 
