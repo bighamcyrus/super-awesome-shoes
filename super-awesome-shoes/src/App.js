@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 // import Nav from './Components/navBar/navBar';
 
 import ShoppingCart from './Components/Cart';
+import { StoreProvider } from './utils/GlobalState';
+
+
+
+
 
 // const httpLink = createHttpLink({
 //   uri: '/graphql',
@@ -24,12 +30,21 @@ import ShoppingCart from './Components/Cart';
 // });
 
 function App() {
+  console.log ("Store Provider")
+  console.log(StoreProvider)
+  
   return (
-    <ShoppingCart />
-
+    <StoreProvider value={StoreProvider}>
+      <Router>
+        <StoreProvider>
+          <ShoppingCart />
+        </StoreProvider>
+      </Router>
+    </StoreProvider>
+  
      
     
-  );
+  ) 
 }
 
 export default App;
