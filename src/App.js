@@ -1,62 +1,46 @@
 import React from 'react';
-import {BrowserRouter as Router} from "react-router-dom"
+
 import { StoreProvider } from './utils/GlobalState'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import ProductList from './Components/ProductList/ProductList'
 import ShoppingCart from './Components/Cart';
 
 
-
+import Home from './pages/Home';
 import Nav from './Components/navBar/navBar'
 import Product from './Components/Product/product'
 
 
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      light: '#757ce8',
-      main: '#5b5b5b',
-      dark: '#002884',
-      contrastText: '#fff',
-    },
-    secondary: {
-      light: '#ff7961',
-      main: '#ffea00',
-      dark: '#ba000d',
-      contrastText: '#000',
-    },
-  },
-});
 
 
 function App() {
   return (
     <Router>
-<StoreProvider>
-<ThemeProvider theme={theme}>
-    <Nav />
-    <Product image={""} seller={""} name={"Jordans"} description={""} _id={""} price={4} quantity={4} />
+    <div>
+      <StoreProvider>
+       
+      
+        <Routes>
+          <Route 
+            path="/" 
+            element={<Home />}  />
+
+
+   
+     
+
     {/* <ShoppingCart /> */}
+
+   
 
     
-   
-     <ProductList />
-     
-
-   
-     
-
-    {/* <ShoppingCart /> */}
-
-    </ThemeProvider>
-
+    </Routes>
+    
     </StoreProvider>
-     
+      </div>
     </Router>
-
+     
   );
 }
 
