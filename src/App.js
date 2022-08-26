@@ -1,7 +1,9 @@
 import React from 'react';
 
+
 import Nav from './Components/navBar/navBar'
 import ProductList from './Components/ProductList/ProductList'
+import ShoppingCart from './Components/Cart';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Product from './Components/Product/product'
@@ -22,6 +24,9 @@ const theme = createTheme({
     },
   },
 });
+
+// import Nav from './Components/navBar/navBar';
+
 
 // const httpLink = createHttpLink({
 //   uri: '/graphql',
@@ -44,6 +49,8 @@ const theme = createTheme({
 
 function App() {
   return (
+
+
     <ThemeProvider theme={theme}>
   
 
@@ -51,16 +58,12 @@ function App() {
      <ProductList />
      <Product image={""} seller={""} name={"Jordans"} description={""} _id={""} price={4} quantity={4} />
      
-
-
-     </ThemeProvider>
-
-
     
+
+    </ThemeProvider>
+
+
      
-     
-    
-  );
-}
+  )};
 
 export default App;
