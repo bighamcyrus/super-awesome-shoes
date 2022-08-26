@@ -1,11 +1,32 @@
 import React from 'react';
-
-
+import { StoreProvider } from './utils/GlobalState'
+import { BrowserRouter as Router } from 'react-router-dom';
 import Nav from './Components/navBar/navBar'
 import Product from './Components/ProductItem/product'
-// import Nav from './Components/navBar/navBar';
-
 // import ShoppingCart from './Components/Cart';
+
+
+
+function App() {
+  return (
+<Router>
+
+
+<StoreProvider>
+    <Nav />
+    <Product image={""} seller={""} name={"Jordans"} description={""} _id={""} price={4} quantity={4} />
+    {/* <ShoppingCart /> */}
+</StoreProvider>
+    
+
+</Router>
+
+  );
+}
+
+export default App;
+
+// import Nav from './Components/navBar/navBar';
 
 
 // const httpLink = createHttpLink({
@@ -27,19 +48,4 @@ import Product from './Components/ProductItem/product'
 //   cache: new InMemoryCache(),
 // });
 
-function App() {
-  return (
 
-<>
-    <Nav />
-    <Product image={""} seller={""} name={"Jordans"} description={""} _id={""} price={4} quantity={4} />
-    {/* // <ShoppingCart /> */}
-</>
-    
-
-
-
-  );
-}
-
-export default App;
