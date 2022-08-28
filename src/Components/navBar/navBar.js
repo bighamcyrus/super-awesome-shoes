@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid';
 
 import Button from '@mui/material/Button';
 import shoppingLogo from './shoppingLogoResize.png'
+import { Link } from 'react-router-dom';
 
 
 
@@ -29,26 +30,26 @@ function FormRow() {
 
             <Grid item xs={1}>
 
-                <Button color='secondary'>
+                <Link to="/category/airforces">
                     <Item>Airforces</Item>
-                </Button>
+                </Link>
 
             </Grid>
 
             <Grid item xs={1}>
-                <Button>
+                <Link to="/category/jordan">
                     <Item>Jordan</Item>
-                </Button>
+                </Link>
             </Grid>
             <Grid item xs={1}>
-                <Button>
+                <Link to="category/yeezy">
                     <Item>Yeezy</Item>
-                </Button>
+                </Link>
             </Grid>
             <Grid item xs={1}>
-                <Button>
+                <Link to="/category/designer">
                     <Item>Designer</Item>
-                </Button>
+                </Link>
             </Grid>
 
         </React.Fragment>

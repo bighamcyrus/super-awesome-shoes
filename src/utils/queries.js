@@ -7,7 +7,6 @@ export const QUERY_PRODUCTS = gql`
       name
       description
       price
-      quantity
       image
       category {
         _id
@@ -25,16 +24,15 @@ export const QUERY_CHECKOUT = gql`
 `;
 
 export const QUERY_ALL_PRODUCTS = gql`
-  {
+  
+    query products {
     products {
       _id
-      name
-      description
+      title
+      image
       price
-      quantity
-      category {
-        name
-      }
+      
+      category 
     }
   }
 `;
@@ -43,7 +41,7 @@ export const QUERY_CATEGORIES = gql`
   {
     categories {
       _id
-      name
+      category
     }
   }
 `;

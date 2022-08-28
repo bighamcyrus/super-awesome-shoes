@@ -18,7 +18,8 @@ import { setContext } from "@apollo/client/link/context";
 
 import Home from './pages/Home';
 import Nav from './Components/navBar/navBar'
-import Product from './Components/Product/product'
+
+import Product from './pages/Detail'
 
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -65,11 +66,22 @@ function App() {
     <Router>
 
          <ApolloProvider client={client}>
-        <Login />
+          
         <StoreProvider>
           <ThemeProvider theme={theme}>
-            <Nav />
-            <Product
+              <Nav />
+        <ShoppingCart />
+            <Routes>
+        
+              <Route            
+              path="/detail"
+              element={<Product/>}
+              >
+              </Route>
+
+            </Routes>
+            <ProductList />
+            {/* <Product
               image={""}
               seller={""}
               name={"Jordans"}
@@ -77,10 +89,7 @@ function App() {
               _id={""}
               price={4}
               quantity={4}
-            />
-            <ShoppingCart />
-
-            <ProductList />
+            /> */}
 
            
           </ThemeProvider>
