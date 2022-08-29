@@ -79,13 +79,11 @@ const Login = (props) => {
                 </button>
               </form>
             )}
-
             </div>
             </div>
-             </div>
+            </div>
             </main>
             
-
 )};
 
 export default Login;
