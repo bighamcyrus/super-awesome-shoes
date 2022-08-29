@@ -11,7 +11,7 @@ import {
   ApolloClient,
   createHttpLink,
 } from "@apollo/client";
-import Login from "./Components/login/login";
+import Login from "./pages/Login";
 import { setContext } from "@apollo/client/link/context";
 
 import Nav from "./Components/navBar/navBar";
