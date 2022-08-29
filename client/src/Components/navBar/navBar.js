@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import ShoppingCart from "../Cart/index"
 
 import shoppingLogo from './shoppingLogoResize.png'
 import { Link } from 'react-router-dom';
@@ -61,6 +62,7 @@ function FormRow() {
                     <Item>SignUp</Item>
                 </Link>
             </Grid>
+            <ShoppingCart />
         </React.Fragment>
     );
 }

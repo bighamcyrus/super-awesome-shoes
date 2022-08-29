@@ -6,7 +6,7 @@ import Product from '../Components/Product/product'
 function product() {
   return (
     <div>
-      <Product                         />
+      <Product />
     </div>
   )
 }
