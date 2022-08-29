@@ -3,17 +3,20 @@ import { Link } from 'react-router-dom';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
+
 import { Category } from '@mui/icons-material';
 
 import { QUERY_ALL_PRODUCTS } from '../../utils/queries';
 import { useQuery } from "@apollo/client";
 import Product from "../Product/product"
 
+
 // import ListSubheader from '@mui/material/ListSubheader';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
 import '../../styles/productlist.css'
 import Container from '@mui/material/Container'
+
 import { Button } from '@mui/material';
 
 //  function ProductList() {
@@ -51,6 +54,9 @@ import { Button } from '@mui/material';
 
 // export default ProductList;
 
+// import Product from '../Product';
+
+
 
 export default function TitlebarBelowImageList() {
   const { loading, data } = useQuery(QUERY_ALL_PRODUCTS);
@@ -58,11 +64,14 @@ export default function TitlebarBelowImageList() {
 
   return (
     <Container maxWidth='lg'>
+
      
-    <ImageList sx={{ width: 1250, height: 1000, border: '3px solid black', gap: '10px', rowHeight:'auto', display:'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}>
+    <ImageList sx={{ width: 1300, height: 1000, border: '3px solid black', gap: '15px', rowHeight:'auto', display:'flex', flexWrap: 'wrap', justifyContent: 'space-between', cols:'6'}}>
       {products.map((product) => (
-         <Link to="/Detail" >
+         <Link to="/Detail" key={product.img} >
         <ImageListItem >
+
+    
           <img
             src={`${product.image}?w=248&fit=crop&auto=format`}
             srcSet={`${product.image}?w=248&fit=crop&auto=format&dpr=2 2x`}
@@ -82,17 +91,20 @@ export default function TitlebarBelowImageList() {
           ))}
         </div> */}
           <ImageListItemBar
+
             title={product.title}
             subtitle={<span>Price: {product.price}</span>}
             actionIcon={
               <IconButton
                 sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
                 aria-label={`info about ${product.title}`}>
+
                 <InfoIcon />
               </IconButton>
             }
           />
         </ImageListItem>
+
         </Link>
       ))}
     </ImageList>
@@ -100,3 +112,8 @@ export default function TitlebarBelowImageList() {
     </Container>
   );
 }
+
+
+
+
+
