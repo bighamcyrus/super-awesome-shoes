@@ -1,10 +1,11 @@
 {
   "name": "super-awesome-shoes",
-
   "version": "1.0.0",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "server/server.js",
-  "devDependencies": {"concurrently": "^5.1.0"},
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server --ignore client",
@@ -23,7 +24,8 @@
   "bugs": {
     "url": "https://github.com/R31ZH/super-awesome-shoes/issues"
   },
-  "homepage": "https://github.com/R31ZH/super-awesome-shoes#readme"
+  "homepage": "https://github.com/R31ZH/super-awesome-shoes#readme",
+  "dependencies": {
+    "bootstrap-icons": "^1.9.1"
+  }
 }
-
-
