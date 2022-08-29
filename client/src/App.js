@@ -12,6 +12,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import { setContext } from "@apollo/client/link/context";
 
 import Nav from "./Components/navBar/navBar";
@@ -93,6 +94,7 @@ function App() {
             <Nav />
             <Routes>
               <Route exact path="/login" element={<Login />} />
+              <Route exact path="/Signup" element={<Signup />} />
 
               <Route
                 path="/"
