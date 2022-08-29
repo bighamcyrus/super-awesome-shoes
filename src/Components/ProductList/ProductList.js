@@ -14,11 +14,9 @@ import Container from '@mui/material/Container'
 export default function TitlebarBelowImageList() {
   return (
     <Container maxWidth='lg'>
-    <ImageList sx={{ width: 1250, height: 1000, border: '3px solid black', gap: '10px', rowHeight:'auto' }}>
-      <ImageListItem key="Subheader" cols={6} >
-      </ImageListItem>
+    <ImageList sx={{ width: 1300, height: 1000, border: '3px solid black', gap: '15px', rowHeight:'auto', display:'flex', flexWrap: 'wrap', justifyContent: 'space-between', cols:'6'}}>
       {itemData.map((item) => (
-        <button>
+        <button style={{flexBasis:'240px', backgroundColor:'white'}}> 
         <ImageListItem key={item.img}>
           <img
             src={`${item.img}?w=248&fit=crop&auto=format`}
@@ -139,5 +137,41 @@ const itemData = [
     img: '/images/AFHigh.png',
     title: 'Nike Air Force 1 High',
     price: '$177.00',
+  },
+  // Designer
+  {
+    img: '/images/BalTrack.png',
+    title: 'Balenciaga Track',
+    price: '$782.00',
+  },
+  {
+    img: '/images/Gucci.png',
+    title: 'Gucci Rhyton - Vintage Logo',
+    price: '$675.00',
+  },
+  {
+    img: '/images/BalSpeed.png',
+    title: 'Balenciaga Speed Graffiti Trainers',
+    price: '$600.00',
+  },
+  {
+    img: '/images/Dior.png',
+    title: 'Dior B22',
+    price: '$1,262.00',
+  },
+  {
+    img: '/images/LV.png',
+    title: 'Louis Vuitton Trainer Sneaker Boot',
+    price: '$2,522.00',
+  },
+  {
+    img: '/images/OffWhite.png',
+    title: 'OFF-WHITE Vulc Low',
+    price: '$256.00',
+  },
+  {
+    img: '/images/McQueen.png',
+    title: 'Alexander McQueen Tread Slick Lace Up Boot',
+    price: '$512.00',
   },
 ];

@@ -59,10 +59,10 @@ function App() {
   return (
     <Router>
       <ApolloProvider client={client}>
-        <Login />
+            <Nav />
+            <Login />
         <StoreProvider>
           <ThemeProvider theme={theme}>
-            <Nav />
             <Product
               image={""}
               seller={""}
@@ -73,11 +73,8 @@ function App() {
               quantity={4}
             />
             <ShoppingCart />
-
-            <ProductList />
-
-            {/* <ShoppingCart /> */}
           </ThemeProvider>
+          <ProductList />
         </StoreProvider>
       </ApolloProvider>
     </Router>
