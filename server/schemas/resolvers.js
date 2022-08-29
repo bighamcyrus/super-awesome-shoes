@@ -10,12 +10,16 @@ const resolvers = {
     users: async () => {
       return User.find();
     },
+
+    products: async () => {
+      return Product.find()
+    },
+    product: async(parent, { _id }) => {
+      return Product.findById(_id);
+    },
     
-            products: async () => {
-                return Product.find()
-            },
-    
-     
+
+
     user: async (parent, { username }) => {
       return User.findOne({ username });
     },

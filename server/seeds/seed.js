@@ -11,7 +11,7 @@ db.once('open', async () => {
         
             {
             category: 'Yeezy',
-            image: 'YeezyBlack.png',
+            image: '/images/YeezyBlack.png',
             title: "Adidas Yeezy Boost 350 V2",
             price: 330
              },
