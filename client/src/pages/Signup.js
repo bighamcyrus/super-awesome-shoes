@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
-import "../styles/login.css";
+
+// import "./signup.css";
 
 import Auth from "../utils/auth";
 
