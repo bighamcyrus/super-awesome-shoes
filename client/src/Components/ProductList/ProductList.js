@@ -1,63 +1,119 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 
+import { Category } from '@mui/icons-material';
+
+import { QUERY_ALL_PRODUCTS } from '../../utils/queries';
+import { useQuery } from "@apollo/client";
+import Product from "../Product/product"
+
+
+// import ListSubheader from '@mui/material/ListSubheader';
+import IconButton from '@mui/material/IconButton';
+import InfoIcon from '@mui/icons-material/Info';
+import '../../styles/productlist.css'
+import Container from '@mui/material/Container'
+
+import { Button } from '@mui/material';
+
+//  function ProductList() {
+//   // const [state, dispatch] = useStoreContext();
+
+//   const { loading, data } = useQuery(QUERY_ALL_PRODUCTS);
+//   const products = data?.products || []
+
+//   return (
+       
+//     <ImageList l={{ width: 100, height: 100, border: '3px solid black', margin:'100px', padding:'150px' }} cols={2} gap={50} rowHeight={704}>
+       
+//         <div className="flex-row">
+//           {products.map((product) => (
+//             <Product
+//               key={product._id}
+//               category={product.category}
+//               image={product.image}
+//               title={product.title}
+//               price={product.price}
+//               quantity={product.quantity}
+//             />
+//           ))}
+//         </div>
+      
+        
+        
+      
+    
+      
+//     </ImageList>
+     
+//   );
+// }
+
+// export default ProductList;
+
+// import Product from '../Product';
+
+
+
 export default function TitlebarBelowImageList() {
+  const { loading, data } = useQuery(QUERY_ALL_PRODUCTS);
+  const products = data?.products || []
+
   return (
-    <ImageList sx={{ width: 630, height: 500, border: '3px solid black', margin:'100px', padding:'150px' }} cols={3} gap={50} rowHeight={164}>
-      {itemData.map((item, index) => (
-        <ImageListItem key={index}>
+    <Container maxWidth='lg'>
+
+     
+    <ImageList sx={{ width: 1300, height: 1000, border: '3px solid black', gap: '15px', rowHeight:'auto', display:'flex', flexWrap: 'wrap', justifyContent: 'space-between', cols:'6'}}>
+      {products.map((product) => (
+         <Link to={`/Detail/${product._id}`} >
+        <ImageListItem >
+
+    
           <img
-            src={`${item.img}?w=248&fit=crop&auto=format`}
-            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-            alt={item.title}
+            src={`${product.image}?w=248&fit=crop&auto=format`}
+            srcSet={`${product.image}?w=248&fit=crop&auto=format&dpr=2 2x`}
+            alt={product.title}
             loading="lazy"
           />
+          {/* <div className="flex-row">
+          {products.map((product) => (
+            <Product
+              key={product._id}
+              category={product.category}
+              image={product.image}
+              title={product.title}
+              price={product.price}
+              quantity={product.quantity}
+            />
+          ))}
+        </div> */}
           <ImageListItemBar
-            title={item.title}
-            subtitle={<span>Price: {item.price}</span>}
-            position="below"
+
+            title={product.title}
+            subtitle={<span>Price: {product.price}</span>}
+            actionIcon={
+              <IconButton
+                sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                aria-label={`info about ${product.title}`}>
+
+                <InfoIcon />
+              </IconButton>
+            }
           />
         </ImageListItem>
+
+        </Link>
       ))}
     </ImageList>
+    
+    </Container>
   );
 }
-const itemData = [
-  {
-    img: '/images/YeezyBlack.png',
-    title: 'Adidas Yeezy Boost 350 V2',
-    price: '$330.00',
-  },
-  {
-    img: '/images/YeezySlides.png',
-    title: 'Adidas Yeezy Slides',
-    price: '$124.00',
-  },
-  {
-    img: '/images/YeezyFoam.png',
-    title: 'Adidas Yeezy Foam Runner',
-    price: '$227.00',
-  },
-  {
-    img: '/images/YeezyWave.png',
-    title: 'Adidas Yezzy Boost 700 Wave',
-    price: '$410.00',
-  },
-  {
-    img: '/images/YeezyZebra.png',
-    title: 'Adidas Yeezy Boost 350 V2 Zebra',
-    price: '$348.00',
-  },
-  {
-    img: '/images/RedOctober.png',
-    title: 'Nike Air Yeezy 2 SP Red October',
-    price: '$23,250.00',
-  },
-  {
-    img: '/images/JordanRetro.png',
-    title: 'Jordan 1 Retro High OG',
-    price: '$186.00',
-  },
-];
+
+
+
+
+

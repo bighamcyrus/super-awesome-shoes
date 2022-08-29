@@ -41,11 +41,13 @@ const Login = (props) => {
   };
 
   return (
+
     <main className="display">
       <div className="">
         <div className="">
           <h4 className="head">Login</h4>
           <div className="">
+
             {data ? (
               <p>
                 Success! You may now head{" "}
@@ -86,6 +88,7 @@ const Login = (props) => {
               </form>
             )}
 
+
             {error && <div className="line">{error.message}</div>}
           </div>
         </div>
@@ -93,5 +96,14 @@ const Login = (props) => {
     </main>
   );
 };
+
+            </div>
+            </div>
+             </div>
+            </main>
+            
+
+)};
+
 
 export default Login;

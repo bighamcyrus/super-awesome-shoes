@@ -16,7 +16,7 @@ import Signup from "./pages/Signup";
 import { setContext } from "@apollo/client/link/context";
 
 import Nav from "./Components/navBar/navBar";
-import Product from "./Components/Product/product";
+import Product from "./pages/product";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
@@ -92,6 +92,7 @@ function App() {
         <ApolloProvider client={client}>
           <ThemeProvider theme={theme}>
             <Nav />
+          
             <Routes>
               <Route exact path="/login" element={<Login />} />
               <Route exact path="/Signup" element={<Signup />} />
@@ -99,18 +100,14 @@ function App() {
               <Route
                 path="/"
                 exact
-                element={
-                  <Product
-                    image={""}
-                    seller={""}
-                    name={"Jordans"}
-                    description={""}
-                    _id={""}
-                    price={4}
-                    quantity={4}
-                  />
+                element={ <ProductList/>
+                  
                 }
               />
+              <Route
+              path={'/Detail/:productId'}
+              element={<Product />} />
+
             </Routes>
           </ThemeProvider>
         </ApolloProvider>
