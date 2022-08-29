@@ -1,6 +1,7 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { StoreProvider } from "./utils/GlobalState";
+import React from 'react';
+
+import { StoreProvider } from './utils/GlobalState'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import ProductList from "./Components/ProductList/ProductList";
 import ShoppingCart from "./Components/Cart";
@@ -14,8 +15,12 @@ import {
 import Login from "./Components/login/login";
 import { setContext } from "@apollo/client/link/context";
 
-import Nav from "./Components/navBar/navBar";
-import Product from "./Components/Product/product";
+
+import Home from './pages/Home';
+import Nav from './Components/navBar/navBar'
+
+import Product from './pages/Detail'
+
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
@@ -35,6 +40,7 @@ const theme = createTheme({
     },
   },
 });
+
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -58,48 +64,42 @@ const client = new ApolloClient({
 function App() {
   return (
     <Router>
-      <ApolloProvider client={client}>
-            <Nav />
-            <Login />
+
+
+         <ApolloProvider client={client}>
+          
         <StoreProvider>
           <ThemeProvider theme={theme}>
-            <Product
+              <Nav />
+        <ShoppingCart />
+            <Routes>
+        
+              <Route            
+              path="/detail"
+              element={<Product/>}
+              >
+              </Route>
+
+            </Routes>
+            <ProductList />
+            {/* <Product
               image={""}
               seller={""}
-              name={""}
+              name={"Jordans"}
               description={""}
               _id={""}
               price={4}
               quantity={4}
-            />
-            <ShoppingCart />
+            /> */}
+
+           
           </ThemeProvider>
-          <ProductList />
         </StoreProvider>
       </ApolloProvider>
     </Router>
+
   );
 }
 
 export default App;
 
-// import Nav from './Components/navBar/navBar';
-
-// const httpLink = createHttpLink({
-//   uri: '/graphql',
-// });
-
-// const authLink = setContext((_, { headers }) => {
-//   const token = localStorage.getItem('id_token');
-//   return {
-//     headers: {
-//       ...headers,
-//       authorization: token ? `Bearer ${token}` : '',
-//     },
-//   };
-// });
-
-// const client = new ApolloClient({
-//   link: authLink.concat(httpLink),
-//   cache: new InMemoryCache(),
-// });
