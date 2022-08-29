@@ -68,7 +68,7 @@ export default function TitlebarBelowImageList() {
      
     <ImageList sx={{ width: 1300, height: 1000, border: '3px solid black', gap: '15px', rowHeight:'auto', display:'flex', flexWrap: 'wrap', justifyContent: 'space-between', cols:'6'}}>
       {products.map((product) => (
-         <Link to="/Detail" key={product.img} >
+         <Link to={`/Detail/${product._id}`} >
         <ImageListItem >
 
     
