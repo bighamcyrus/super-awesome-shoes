@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 
+// import "./signup.css";
+
 import Auth from "../utils/auth";
 
 const Signup = () => {
@@ -39,11 +41,11 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-          <div className="card-body">
+    <main className="display">
+      <div className="">
+        <div className="">
+          <h4 className="head">Sign Up</h4>
+          <div className="">
             {data ? (
               <p>
                 Success! You may now head{" "}
@@ -52,7 +54,7 @@ const Signup = () => {
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input
-                  className="form-input"
+                  className="line"
                   placeholder="Your username"
                   name="username"
                   type="text"
@@ -60,7 +62,7 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 <input
-                  className="form-input"
+                  className="line"
                   placeholder="Your email"
                   name="email"
                   type="email"
@@ -68,7 +70,7 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 <input
-                  className="form-input"
+                  className="line"
                   placeholder="******"
                   name="password"
                   type="password"
@@ -76,7 +78,7 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-primary"
+                  className="but"
                   style={{ cursor: "pointer" }}
                   type="submit"
                 >
