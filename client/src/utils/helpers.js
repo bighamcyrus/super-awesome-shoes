@@ -47,7 +47,6 @@ export function pluralize(name, count) {
             console.log('No valid method');
             break;
         }
-  
         tx.oncomplete = function() {
           db.close();
         };

@@ -23,6 +23,12 @@ const productSchema = new Schema({
         type: Number,
 
     },
+    seller: {
+        type: String,
+         },
+    quantity: {
+        description: String,
+         },
 })
 
 

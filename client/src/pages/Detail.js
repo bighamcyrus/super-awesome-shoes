@@ -58,7 +58,7 @@ function Detail() {
         <div className="container my-1">
           <Link to="/">← Back to All Shoes</Link>
 
-          <h2>{product.title}</h2>
+          <h2>{product.title} hello </h2>
 
           <p>{product.description}</p>
 
@@ -74,8 +74,8 @@ function Detail() {
           </p>
 
           <img
-            src={`/images/${product.image}`}
-            alt={product.name}
+            src={`${product.image}`}
+            alt={product.title}
           />
         </div>
       ) : null}

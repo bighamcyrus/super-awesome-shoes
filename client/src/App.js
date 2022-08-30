@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { StoreProvider } from "./utils/GlobalState";
 
 import ProductList from "./Components/ProductList/ProductList";
-import ShoppingCart from "./Components/Cart";
+// import ShoppingCart from "./Components/Cart";
 
 import {
   ApolloProvider,
@@ -16,7 +16,7 @@ import Signup from "./pages/Signup";
 import { setContext } from "@apollo/client/link/context";
 
 import Nav from "./Components/navBar/navBar";
-import Product from "./Components/Product/product";
+import Product from "./pages/product";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
@@ -92,26 +92,18 @@ function App() {
         <ApolloProvider client={client}>
           <ThemeProvider theme={theme}>
             <Nav />
-          
             <Routes>
               <Route exact path="/login" element={<Login />} />
               <Route exact path="/Signup" element={<Signup />} />
-
               <Route
                 path="/"
                 exact
-                element={ <ProductList/>
-                  // <Product
-                  //   image={""}
-                  //   seller={""}
-                  //   name={"Jordans"}
-                  //   description={""}
-                  //   _id={""}
-                  //   price={4}
-                  //   quantity={4}
-                  // />
+                element={ <ProductList/> 
                 }
               />
+              <Route
+              path={'/Detail/:productId'}
+              element={<Product />} />
             </Routes>
           </ThemeProvider>
         </ApolloProvider>

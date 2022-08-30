@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 
+// import "./signup.css";
+
 import Auth from "../utils/auth";
 
 const Signup = () => {
@@ -39,11 +41,11 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-          <div className="card-body">
+    <main className="display">
+      <div className="">
+        <div className="">
+          <h4 className="head" style={{fontSize: '35px', fontFamily: 'Silkscreen, cursive', textAlign: 'center'}}>Sign Up</h4>
+          <div className="">
             {data ? (
               <p>
                 Success! You may now head{" "}
@@ -52,44 +54,41 @@ const Signup = () => {
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input
-                  className="form-input"
-                  placeholder="Your username"
+                  className="line"
+                  placeholder="Create Username"
                   name="username"
                   type="text"
+                  style={{borderRadius: '18px', textAlign: 'center'}}
                   value={formState.name}
                   onChange={handleChange}
                 />
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
+                  <input
+                  className="line"
+                  placeholder="Create Password"
                   name="password"
                   type="password"
+                  style={{borderRadius: '18px', textAlign: 'center'}}
                   value={formState.password}
                   onChange={handleChange}
                 />
+                <input
+                  className="line"
+                  placeholder="Enter Email"
+                  name="email"
+                  type="email"
+                  style={{borderRadius: '18px', textAlign: 'center'}}
+                  value={formState.email}
+                  onChange={handleChange}
+                />
                 <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: "pointer" }}
-                  type="submit"
-                >
-                  Submit
+                  className="but"
+                  style={{ cursor: "pointer", width: '100px', height: '30px', borderRadius: '4px', fontSize: '16px',
+                  color: '#FFb300', justifyContent: 'center', backgroundColor: 'black', borderColor: 'black' }} type="submit">Submit
                 </button>
-              </form>
-            )}
-
+              </form>)}
             {error && (
               <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
-            )}
+                {error.message}</div>)}
           </div>
         </div>
       </div>

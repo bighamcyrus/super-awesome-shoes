@@ -14,6 +14,9 @@ const typeDefs = gql`
     image: String
     title: String
     price: Int
+    seller: String
+    description: String
+    quantity: Int
   }
 
 
@@ -27,6 +30,8 @@ const typeDefs = gql`
     user(username: String!): User
     me: User
     products: [Product]
+    product(_id: ID!): Product
+    productsbyCategory(category: ID!): [Product]
   }
 
   type Mutation {

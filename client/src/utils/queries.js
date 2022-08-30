@@ -31,11 +31,21 @@ export const QUERY_ALL_PRODUCTS = gql`
       title
       image
       price
-      
       category 
     }
   }
 `;
+export const ONE_PRODUCT = gql`
+
+  query product($_id: ID!) {
+    product(_id: $_id) {
+      _id
+      title
+      image
+      price      
+      category 
+    }
+  }`;
 
 export const QUERY_CATEGORIES = gql`
   {

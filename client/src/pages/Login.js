@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
-
+import "./login.css";
 import Auth from "../utils/auth";
 
 const Login = (props) => {
@@ -42,11 +42,11 @@ const Login = (props) => {
 
   return (
 
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
+    <main className="display">
+      <div className="">
+        <div className="">
+          <h4 className="head" style={{fontSize: '35px', fontFamily: 'Silkscreen, cursive', textAlign: 'center'}} >Login</h4>
+          <div className="">
             {data ? (
               <p>
                 Success! You may now head{" "}
@@ -55,35 +55,43 @@ const Login = (props) => {
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input
-                  className="form-input"
-                  placeholder="Your username"
+                  className="line"
+                  placeholder="Username"
                   name="username"
                   type="username"
+                  style={{borderRadius: '18px', textAlign: 'center'}}
                   value={formState.username}
                   onChange={handleChange}
                 />
                 <input
-                  className="form-input"
-                  placeholder="******"
+                  className="line"
+                  placeholder="Password"
                   name="password"
                   type="password"
+                  style={{borderRadius: '18px', textAlign: 'center'}}
                   value={formState.password}
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: "pointer" }}
-                  type="submit"
-                >
-                  Submit
+                  className="but"
+                  style={{ cursor: "pointer", width: '85px', height: '30px', borderRadius: '4px', fontSize: '16px',
+                  color: '#FFb300', justifyContent: 'center', backgroundColor: 'black', borderColor: 'black' }}
+                  type="submit">Submit
+                </button>
+                <button
+                  className="but"
+                  style={{ cursor: "pointer", width: '85px', height: '30px', borderRadius: '4px', fontSize: '16px',
+                  color: '#FFb300', justifyContent: 'center', backgroundColor: 'black', borderColor: 'black' }}
+                  type="submit">Sign Up
                 </button>
               </form>
             )}
-            </div>
-            </div>
-            </div>
-            </main>
-            
-)};
+            {error && <div className="line">{error.message}</div>}
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+};
 
 export default Login;
