@@ -4,21 +4,17 @@ import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import "./login.css";
 import Auth from "../utils/auth";
-
 const Login = (props) => {
   const [formState, setFormState] = useState({ username: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN_USER);
-
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
-
     setFormState({
       ...formState,
       [name]: value,
     });
   };
-
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -27,21 +23,17 @@ const Login = (props) => {
       const { data } = await login({
         variables: { ...formState },
       });
-
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
     }
-
     // clear form values
     setFormState({
       username: "",
       password: "",
     });
   };
-
   return (
-
     <main className="display">
       <div className="">
         <div className="">
@@ -75,13 +67,17 @@ const Login = (props) => {
                 <button
                   className="but"
                   style={{ cursor: "pointer", width: '85px', height: '30px', borderRadius: '4px', fontSize: '16px',
-                  color: '#FFb300', justifyContent: 'center', backgroundColor: 'black', borderColor: 'black' }}
+
+                  color: '#FFB300', justifyContent: 'center', backgroundColor: 'black', borderColor: 'black' }}
+
                   type="submit">Submit
                 </button>
                 <button
                   className="but"
                   style={{ cursor: "pointer", width: '85px', height: '30px', borderRadius: '4px', fontSize: '16px',
-                  color: '#FFb300', justifyContent: 'center', backgroundColor: 'black', borderColor: 'black' }}
+
+                  color: '#FFB300', justifyContent: 'center', backgroundColor: 'black', borderColor: 'black' }}
+
                   type="submit">Sign Up
                 </button>
               </form>
@@ -95,3 +91,4 @@ const Login = (props) => {
 };
 
 export default Login;
+

@@ -58,7 +58,7 @@ function Detail() {
         <div className="container my-1">
           <Link to="/">← Back to All Shoes</Link>
 
-          <h2>{product.title} hello </h2>
+          <h2>{product.title}</h2>
 
           <p>{product.description}</p>
 

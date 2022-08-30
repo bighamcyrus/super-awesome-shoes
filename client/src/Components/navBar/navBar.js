@@ -9,9 +9,8 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { IconButton } from '@mui/material';
 
-
 const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: '#fca311',
+    backgroundColor: '#FCA311',
     textAlign: 'center',
     color: '#14213D',
     width: '100px',
@@ -23,7 +22,6 @@ const Item = styled(Paper)(({ theme }) => ({
     fontFamily: 'Silkscreen, cursive',
     marginTop: '23px'
 }));
-
 function FormRow() {
     return (
         <React.Fragment>
@@ -57,7 +55,6 @@ function FormRow() {
         </React.Fragment>
     );
 }
-
 export default function NestedGrid() {
     return (
         <>
@@ -65,10 +62,12 @@ export default function NestedGrid() {
                 <Grid container rowSpacing={5} spacing={4}>
                     <Grid item justifyContent='flex-start'>
                     </Grid>
-                    <h1 className="card-header bg-light text-light p-2" style={{ fontSize: "50px", color: 'white', display: 'center', marginLeft: '20px', marginTop: '50px',  fontFamily: 'Silkscreen, cursive' }}>KnockItOff</h1>
+
+                    <h1 className="card-header bg-light text-light p-2" style={{ fontSize: "50px", color: 'white', display: 'center', marginLeft: '20px', marginTop: '50px',  fontFamily: 'Silkscreen, cursive' }}>KickItOff</h1>
                     <FormRow justifyContent="flex-end" />
-                    <Link to="/login"><IconButton aria-label="SignUp" style={{color: '#FFb300', marginLeft: '110px', marginTop: '45px', fontSize: '30px', fontFamily: 'Silkscreen, cursive'}}> <ArrowForwardIcon style={{fontSize: '30px'}} />Login</IconButton></Link>
-                    <Link to="/signup"><IconButton aria-label="Login" style={{color: '#FFb300', marginLeft: '35px', marginTop: '45px',fontSize: '30px', fontFamily: 'Silkscreen, cursive'}}> <AccountBoxIcon style={{fontSize: '28px'}} />Sign-Up</IconButton></Link>
+                    <Link to="/login"><IconButton aria-label="SignUp" style={{color: '#FFB300', marginLeft: '110px', marginTop: '45px', fontSize: '30px', fontFamily: 'Silkscreen, cursive'}}> <ArrowForwardIcon style={{fontSize: '30px'}} />Login</IconButton></Link>
+                    <Link to="/signup"><IconButton aria-label="Login" style={{color: '#FFB300', marginLeft: '35px', marginTop: '45px',fontSize: '30px', fontFamily: 'Silkscreen, cursive'}}> <AccountBoxIcon style={{fontSize: '28px'}} />Sign-Up</IconButton></Link>
+
                 </Grid>
             </Box>
         </>
