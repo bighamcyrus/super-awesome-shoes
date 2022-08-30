@@ -4,21 +4,17 @@ import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import "./login.css";
 import Auth from "../utils/auth";
-
 const Login = (props) => {
   const [formState, setFormState] = useState({ username: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN_USER);
-
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
-
     setFormState({
       ...formState,
       [name]: value,
     });
   };
-
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -27,27 +23,22 @@ const Login = (props) => {
       const { data } = await login({
         variables: { ...formState },
       });
-
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
     }
-
     // clear form values
     setFormState({
       username: "",
       password: "",
     });
   };
-
   return (
-
     <main className="display">
       <div className="">
         <div className="">
-          <h4 className="head">Login</h4>
+          <h4 className="head" style={{fontSize: '35px', fontFamily: 'Silkscreen, cursive', textAlign: 'center'}} >Login</h4>
           <div className="">
-
             {data ? (
               <p>
                 Success! You may now head{" "}
@@ -57,38 +48,36 @@ const Login = (props) => {
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="line"
-                  placeholder="Your username"
+                  placeholder="Username"
                   name="username"
                   type="username"
+                  style={{borderRadius: '18px', textAlign: 'center'}}
                   value={formState.username}
                   onChange={handleChange}
                 />
                 <input
                   className="line"
-                  placeholder="******"
+                  placeholder="Password"
                   name="password"
                   type="password"
+                  style={{borderRadius: '18px', textAlign: 'center'}}
                   value={formState.password}
                   onChange={handleChange}
                 />
                 <button
                   className="but"
-                  style={{ cursor: "pointer" }}
-                  type="submit"
-                >
-                  Submit
+                  style={{ cursor: "pointer", width: '85px', height: '30px', borderRadius: '4px', fontSize: '16px',
+                  color: '#FFB300', justifyContent: 'center', backgroundColor: 'black', borderColor: 'black' }}
+                  type="submit">Submit
                 </button>
                 <button
                   className="but"
-                  style={{ cursor: "pointer" }}
-                  type="submit"
-                >
-                  New User?
+                  style={{ cursor: "pointer", width: '85px', height: '30px', borderRadius: '4px', fontSize: '16px',
+                  color: '#FFB300', justifyContent: 'center', backgroundColor: 'black', borderColor: 'black' }}
+                  type="submit">Sign Up
                 </button>
               </form>
             )}
-
-
             {error && <div className="line">{error.message}</div>}
           </div>
         </div>
@@ -96,7 +85,4 @@ const Login = (props) => {
     </main>
   );
 };
-
-          
-
 export default Login;
