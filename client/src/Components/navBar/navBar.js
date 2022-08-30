@@ -63,11 +63,11 @@ function FormRow() {
 export default function NestedGrid() {
     return (
         <>
-            <Box backgroundColor="black" sx={{ flexGrow: 6, height: '200px' }}>
+            <Box backgroundColor="black" sx={{ flexGrow: 6, height: '100px' }}>
                 <Grid container rowSpacing={5} spacing={4}>
                     <Grid item justifyContent='flex-start'>
                     </Grid>
-                    <h1 className="card-header bg-light text-light p-2" style={{ fontSize: "50px", color: 'white', display: 'center' }}>KnockItOff</h1>
+                    <h1 className="card-header bg-light text-light p-2" style={{ fontSize: "50px", color: 'white', display: 'center' }}>S.A.S.S</h1>
                     <FormRow justifyContent="flex-end" />
                 {/* <IconButton aria-label="Login" primary="ffc400"> <AccountCircleIcon /> </IconButton>
                 <IconButton aria-label="SignUp" color="primary"> <ArrowForwardIcon /> </IconButton> */}

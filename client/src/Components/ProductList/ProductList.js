@@ -43,18 +43,7 @@ export default function TitlebarBelowImageList() {
 
   return (
     <Container maxWidth='lg'>
-      <ImageList sx={{ width: 1300, height: 1000, border: '3px solid black', gap: '15px', rowHeight: 'auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', cols: '6' }}>
-        {products.map((product) => (
-          <Link to="/Detail" key={product.img} >
-            <ImageListItem >
-              <img
-                src={`${product.image}?w=248&fit=crop&auto=format`}
-                srcSet={`${product.image}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                alt={product.title}
-                loading="lazy"
-              />
-              {/* <div className="flex-row">
-
+      
      
     <ImageList sx={{ width: 1300, height: 1000, border: '3px solid black', gap: '15px', rowHeight:'auto', display:'flex', flexWrap: 'wrap', justifyContent: 'space-between', cols:'6'}}>
       {products.map((product) => (

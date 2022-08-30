@@ -31,7 +31,7 @@ const typeDefs = gql`
     me: User
     products: [Product]
     product(_id: ID!): Product
-    productsbyCategory(category: ID!): [Product]
+    productsByCategory(category: ID!): [Product]
   }
 
   type Mutation {

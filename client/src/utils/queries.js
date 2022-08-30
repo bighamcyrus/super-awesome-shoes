@@ -49,9 +49,12 @@ export const ONE_PRODUCT = gql`
   }`;
 
 export const QUERY_CATEGORIES = gql`
+  
+      
   {
-    categories {
+    category(category: $category) {
       _id
+           
       category
     }
   }

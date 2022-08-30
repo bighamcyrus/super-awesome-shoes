@@ -107,6 +107,7 @@ function App() {
               <Route
               path={'/Detail/:productId'}
               element={<Product />} />
+              
 
             </Routes>
           </ThemeProvider>
