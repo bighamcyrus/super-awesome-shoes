@@ -67,13 +67,17 @@ const Login = (props) => {
                 <button
                   className="but"
                   style={{ cursor: "pointer", width: '85px', height: '30px', borderRadius: '4px', fontSize: '16px',
+
                   color: '#FFB300', justifyContent: 'center', backgroundColor: 'black', borderColor: 'black' }}
+
                   type="submit">Submit
                 </button>
                 <button
                   className="but"
                   style={{ cursor: "pointer", width: '85px', height: '30px', borderRadius: '4px', fontSize: '16px',
+
                   color: '#FFB300', justifyContent: 'center', backgroundColor: 'black', borderColor: 'black' }}
+
                   type="submit">Sign Up
                 </button>
               </form>
@@ -85,4 +89,6 @@ const Login = (props) => {
     </main>
   );
 };
+
 export default Login;
+

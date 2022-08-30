@@ -33,11 +33,12 @@
 
 body{
     background-color:#5b5b5b ;
+
     background-image: url(../../public/images/white.png);
+
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-
 }
 
   

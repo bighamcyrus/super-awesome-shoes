@@ -73,7 +73,9 @@ const Signup = () => {
                 <button
                   className="but"
                   style={{ cursor: "pointer", width: '100px', height: '30px', borderRadius: '4px', fontSize: '16px',
+
                   color: '#FFB300', justifyContent: 'center', backgroundColor: 'black', borderColor: 'black' }} type="submit">Submit
+
                 </button>
               </form>)}
             {error && (
