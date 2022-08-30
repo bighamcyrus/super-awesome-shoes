@@ -45,9 +45,8 @@ const Login = (props) => {
     <main className="display">
       <div className="">
         <div className="">
-          <h4 className="head">Login</h4>
+          <h4 className="head" style={{fontSize: '35px', fontFamily: 'Silkscreen, cursive', textAlign: 'center'}} >Login</h4>
           <div className="">
-
             {data ? (
               <p>
                 Success! You may now head{" "}
@@ -57,38 +56,36 @@ const Login = (props) => {
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="line"
-                  placeholder="Your username"
+                  placeholder="Username"
                   name="username"
                   type="username"
+                  style={{borderRadius: '18px', textAlign: 'center'}}
                   value={formState.username}
                   onChange={handleChange}
                 />
                 <input
                   className="line"
-                  placeholder="******"
+                  placeholder="Password"
                   name="password"
                   type="password"
+                  style={{borderRadius: '18px', textAlign: 'center'}}
                   value={formState.password}
                   onChange={handleChange}
                 />
                 <button
                   className="but"
-                  style={{ cursor: "pointer" }}
-                  type="submit"
-                >
-                  Submit
+                  style={{ cursor: "pointer", width: '85px', height: '30px', borderRadius: '4px', fontSize: '16px',
+                  color: '#FFb300', justifyContent: 'center', backgroundColor: 'black', borderColor: 'black' }}
+                  type="submit">Submit
                 </button>
                 <button
                   className="but"
-                  style={{ cursor: "pointer" }}
-                  type="submit"
-                >
-                  New User?
+                  style={{ cursor: "pointer", width: '85px', height: '30px', borderRadius: '4px', fontSize: '16px',
+                  color: '#FFb300', justifyContent: 'center', backgroundColor: 'black', borderColor: 'black' }}
+                  type="submit">Sign Up
                 </button>
               </form>
             )}
-
-
             {error && <div className="line">{error.message}</div>}
           </div>
         </div>
@@ -96,14 +93,5 @@ const Login = (props) => {
     </main>
   );
 };
-
-            </div>
-            </div>
-             </div>
-            </main>
-            
-
-)};
-
 
 export default Login;

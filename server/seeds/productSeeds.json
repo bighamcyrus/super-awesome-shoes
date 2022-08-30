@@ -1,10 +1,10 @@
 [
-    {
+  {
     "category": "Yeezy",
     "image": "YeezyBlack.png",
     "title": "Adidas Yeezy Boost 350 V2",
     "price": 330
-     },
+  },
   {
     "category": "Yeezy",
     "image": "/images/YeezySlides.png",
@@ -41,7 +41,6 @@
     "title": "Jordan 1 Retro High OG",
     "price": 186.00
   },
-
   {
     "category": "Jordan",
     "image": "/images/Jordan3.png",
@@ -72,7 +71,6 @@
     "title": "Jordan 6 Retro - Travis Scott British Khaki",
     "price": 388.00
   },
-
   {
     "category": "Airforces",
     "image": "/images/AirForceWhite.png",
@@ -109,7 +107,6 @@
     "title": "Nike Air Force 1 High",
     "price": 177.00
   },
-  
   {
     "category": "Designer",
     "image": "/images/BalTrack.png",
@@ -152,5 +149,4 @@
     "title": "Alexander McQueen Tread Slick Lace Up Boot",
     "price": 512.00
   }
-]  
-
+]
