@@ -1,4 +1,4 @@
-KnockItOff!!
+## KnockItOff!!
 
 ## Description:
 This team created an E-commerce application for buying shoes. When users enter application they can view all shoes, whether alltogether or just by category. Each shoe will display a name and price and users can add shoes to cart to buy. Users must create an account or login before buying shoes.
