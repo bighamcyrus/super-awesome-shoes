@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/R31ZH/super-awesome-shoes#readme",
   "dependencies": {
-    "bootstrap-icons": "^1.9.1"
+    "bootstrap-icons": "^1.9.1",
+    "heroku": "^7.62.0"
   }
 }
