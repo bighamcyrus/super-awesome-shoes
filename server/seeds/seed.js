@@ -5,6 +5,7 @@ const Product = require('../models/product');
 
 db.once('open', async () => {
   try {
+    
     await Product.deleteMany({});
     
     await Product.insertMany([

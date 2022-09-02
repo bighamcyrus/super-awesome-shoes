@@ -13,6 +13,7 @@ import {
 } from "@apollo/client";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Airforces from "./pages/Airforces"
 import { setContext } from "@apollo/client/link/context";
 
 import Nav from "./Components/navBar/navBar";
@@ -95,6 +96,7 @@ function App() {
             <Routes>
               <Route exact path="/login" element={<Login />} />
               <Route exact path="/Signup" element={<Signup />} />
+              <Route exact path="/category/airforces" element={<Airforces />} />
               <Route
                 path="/"
                 exact
